@@ -7,7 +7,8 @@ const hostname = 'localhost'
 const port = 3000
 // when using middleware `hostname` and `port` must be provided below
 const app = next({ dev, hostname, port })
-const handle = app.getRequestHandler()
+const routes = require("./routes")
+const handle = routes.getRequestHandler(app)
 
 app.prepare().then(() => {
   createServer(async (req, res) => {
