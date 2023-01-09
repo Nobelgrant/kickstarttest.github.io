@@ -1,16 +1,17 @@
-const { createServer } = require("https");
-const next = require("next");
+const express = require("express");
+const path = require("path");
+const port = process.env.PORT || 8080;
+const app = express();
 
-const app = next({
-  dev: process.env.NODE_ENV !== "production",
-});
 
 const routes = require("./routes");
 const handler = routes.getRequestHandler(app);
 
-app.prepare().then(() => {
-  createServer(handler).listen(3000, (err) => {
-    if (err) throw err;
-    console.log("Ready on localhost:3000");
-  });
+app.use(express.static(__dirname));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '/pages/index.js'))
 });
+
+app.listen(port);
+console.log("Server Strated");
