@@ -9,7 +9,7 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
 } else {
   // We are on the server *OR* the user is not running metamask
   const provider = new Web3.providers.HttpProvider(
-    https://data-seed-prebsc-1-s1.binance.org:8545"
+    https,//data-seed-prebsc-1-s1.binance.org:8545"
   );
   web3 = new Web3(provider);
 }
