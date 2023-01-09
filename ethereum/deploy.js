@@ -3,9 +3,9 @@ const Web3 = require("web3");
 const compiledFactory = require("./build/CampaignFactory.json");
 
 const provider = new HDWalletProvider(
-  "YOUR_MNEMONIC",
+  "harsh park detail will engine rocket coffee change exhaust avoid volcano virtual",
   // remember to change this to your own phrase!
-  "YOUR_INFURA_URL"
+  "https://data-seed-prebsc-1-s1.binance.org:8545"
   // remember to change this to your own endpoint!
 );
 const web3 = new Web3(provider);
