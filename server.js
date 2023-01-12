@@ -1,17 +1,16 @@
-const express = require("express");
-const path = require("path");
-const port = process.env.PORT || 8080;
-const app = express();
-
-
+const https = require('https');
+const next = require("next");
 const routes = require("./routes");
-const handler = routes.getRequestHandler(app);
 
-app.use(express.static(__dirname));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '/pages/index.js'))
+const app = next({
+  dev: process.env.NODE_ENV !== "production",
 });
 
-app.listen(port);
-console.log("Server Strated");
+const server = https.createServer(options, (req, res) => {
+  // handle requests here
+  const handler = routes.getRequestHandler(app);
+});
+
+server.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
