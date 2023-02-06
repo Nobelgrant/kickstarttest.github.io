@@ -1,8 +1,8 @@
 {
   "name": "kickstart-updated",
   "version": "1.0.0",
+    "description": "",
   "main": "index.js",
-  "description": ""
   "scripts": {
     "test": "mocha",
     "dev": "node server.js"
