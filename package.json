@@ -2,6 +2,7 @@
   "name": "kickstart-updated",
   "version": "1.0.0",
   "main": "index.js",
+  "description": ""
   "scripts": {
     "test": "mocha",
     "dev": "node server.js"
@@ -21,10 +22,5 @@
     "semantic-ui-react": "^2.1.4",
     "solc": "^0.8.9",
     "web3": "^1.8.1"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "keywords": [],
-  "description": ""
+  }
 }
